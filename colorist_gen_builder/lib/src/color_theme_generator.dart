@@ -11,7 +11,10 @@ class ColorThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
   ) {
     final className = element.name;
     final themeName = annotation.read('name').stringValue;
-    final isDarkTheme = annotation.read('isDarkTheme').boolValue;
+
+    // Theme Brightness
+    // final isDarkTheme =
+    //     element.fields.firstWhere((f) => f.name == "brightness");
 
     // Collect all Color fields
     final colorFields = element.fields
@@ -23,8 +26,7 @@ class ColorThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
 
     final buffer = StringBuffer();
 
-    buffer
-        .writeln('// Theme: $themeName (${isDarkTheme ? 'dark' : 'light'})\n');
+    buffer.writeln('// Theme: $themeName ()\n');
 
     // Class name for generated ThemeExtension
     final themeClassName = '${className}Generated';

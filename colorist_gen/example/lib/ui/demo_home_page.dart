@@ -1,4 +1,5 @@
-import 'package:example/src/theme_context_extensions.dart';
+import 'package:colorist_gen/colorist_gen.dart';
+import 'package:example/src/color_themes.dart';
 import 'package:flutter/material.dart';
 
 class DemoHomePage extends StatelessWidget {
@@ -59,6 +60,16 @@ class DemoHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: context.colors.canvas,
+        onTap: (index) {
+          final controller = ThemeManager.of(context);
+          if (index == 0) {
+            controller.setTheme(MainLightTheme());
+          } else if (index == 1) {
+            controller.setTheme(MainDarkTheme());
+          } else {
+            controller.setTheme(MainDarkTheme());
+          }
+        },
         items: [
           const BottomNavigationBarItem(
             icon: Icon(Icons.star),

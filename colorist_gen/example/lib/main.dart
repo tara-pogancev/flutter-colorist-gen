@@ -1,4 +1,5 @@
-import 'package:example/src/material_app_theme.dart';
+import 'package:colorist_gen/colorist_gen.dart';
+import 'package:example/src/color_themes.dart';
 import 'package:example/ui/demo_home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,10 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Colorist Demo',
-      theme: coloristMaterialAppTheme,
-      home: const DemoHomePage(),
+    return ThemeManager<AppColorTheme>(
+      themes: [
+        MainLightTheme(),
+        MainDarkTheme(),
+      ],
+      initialTheme: MainLightTheme(),
+      child: const MaterialApp(
+        title: 'Colorist Demo',
+        home: DemoHomePage(),
+      ),
     );
   }
 }

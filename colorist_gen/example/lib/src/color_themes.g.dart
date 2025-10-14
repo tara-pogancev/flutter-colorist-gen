@@ -4,7 +4,7 @@
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
-part of 'app_themes.dart';
+part of 'color_themes.dart';
 
 // **************************************************************************
 // ColorThemeGenerator
@@ -84,4 +84,8 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
 
   static MainLightThemeGenerated of(BuildContext context) =>
       Theme.of(context).extension<MainLightThemeGenerated>()!;
+}
+
+extension AppColorThemeX on BuildContext {
+  AppColorTheme get colors => this.themeManager.currentTheme as AppColorTheme;
 }
