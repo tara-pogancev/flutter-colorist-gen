@@ -16,27 +16,47 @@ part of 'app_themes.dart';
 class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
   final Color canvas;
   final Color cardBackground;
-  final Color textPrimary;
-  final Color accent;
+  final Color cardGradientEnd;
+  final Color cardGradientStart;
+  final Color primary;
+  final Color text;
+  final Color textSecondary;
+  final Color textTernary;
+  final Color white;
 
   const MainLightThemeGenerated({
     required this.canvas,
     required this.cardBackground,
-    required this.textPrimary,
-    required this.accent,
+    required this.cardGradientEnd,
+    required this.cardGradientStart,
+    required this.primary,
+    required this.text,
+    required this.textSecondary,
+    required this.textTernary,
+    required this.white,
   });
 
   @override
   MainLightThemeGenerated copyWith({
     Color? canvas,
     Color? cardBackground,
-    Color? textPrimary,
-    Color? accent,
+    Color? cardGradientEnd,
+    Color? cardGradientStart,
+    Color? primary,
+    Color? text,
+    Color? textSecondary,
+    Color? textTernary,
+    Color? white,
   }) => MainLightThemeGenerated(
     canvas: canvas ?? this.canvas,
     cardBackground: cardBackground ?? this.cardBackground,
-    textPrimary: textPrimary ?? this.textPrimary,
-    accent: accent ?? this.accent,
+    cardGradientEnd: cardGradientEnd ?? this.cardGradientEnd,
+    cardGradientStart: cardGradientStart ?? this.cardGradientStart,
+    primary: primary ?? this.primary,
+    text: text ?? this.text,
+    textSecondary: textSecondary ?? this.textSecondary,
+    textTernary: textTernary ?? this.textTernary,
+    white: white ?? this.white,
   );
 
   @override
@@ -48,106 +68,20 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
     return MainLightThemeGenerated(
       canvas: Color.lerp(canvas, other.canvas, t)!,
       cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
-      textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
-      accent: Color.lerp(accent, other.accent, t)!,
+      cardGradientEnd: Color.lerp(cardGradientEnd, other.cardGradientEnd, t)!,
+      cardGradientStart: Color.lerp(
+        cardGradientStart,
+        other.cardGradientStart,
+        t,
+      )!,
+      primary: Color.lerp(primary, other.primary, t)!,
+      text: Color.lerp(text, other.text, t)!,
+      textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
+      textTernary: Color.lerp(textTernary, other.textTernary, t)!,
+      white: Color.lerp(white, other.white, t)!,
     );
   }
 
   static MainLightThemeGenerated of(BuildContext context) =>
       Theme.of(context).extension<MainLightThemeGenerated>()!;
-}
-
-// Theme: main (dark)
-
-@immutable
-class MainDarkThemeGenerated extends ThemeExtension<MainDarkThemeGenerated> {
-  final Color canvas;
-  final Color cardBackground;
-  final Color textPrimary;
-  final Color accent;
-
-  const MainDarkThemeGenerated({
-    required this.canvas,
-    required this.cardBackground,
-    required this.textPrimary,
-    required this.accent,
-  });
-
-  @override
-  MainDarkThemeGenerated copyWith({
-    Color? canvas,
-    Color? cardBackground,
-    Color? textPrimary,
-    Color? accent,
-  }) => MainDarkThemeGenerated(
-    canvas: canvas ?? this.canvas,
-    cardBackground: cardBackground ?? this.cardBackground,
-    textPrimary: textPrimary ?? this.textPrimary,
-    accent: accent ?? this.accent,
-  );
-
-  @override
-  MainDarkThemeGenerated lerp(
-    ThemeExtension<MainDarkThemeGenerated>? other,
-    double t,
-  ) {
-    if (other is! MainDarkThemeGenerated) return this;
-    return MainDarkThemeGenerated(
-      canvas: Color.lerp(canvas, other.canvas, t)!,
-      cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
-      textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
-      accent: Color.lerp(accent, other.accent, t)!,
-    );
-  }
-
-  static MainDarkThemeGenerated of(BuildContext context) =>
-      Theme.of(context).extension<MainDarkThemeGenerated>()!;
-}
-
-// Theme: premium (dark)
-
-@immutable
-class PremiumDarkThemeGenerated
-    extends ThemeExtension<PremiumDarkThemeGenerated> {
-  final Color canvas;
-  final Color cardBackground;
-  final Color textPrimary;
-  final Color accent;
-
-  const PremiumDarkThemeGenerated({
-    required this.canvas,
-    required this.cardBackground,
-    required this.textPrimary,
-    required this.accent,
-  });
-
-  @override
-  PremiumDarkThemeGenerated copyWith({
-    Color? canvas,
-    Color? cardBackground,
-    Color? textPrimary,
-    Color? accent,
-  }) => PremiumDarkThemeGenerated(
-    canvas: canvas ?? this.canvas,
-    cardBackground: cardBackground ?? this.cardBackground,
-    textPrimary: textPrimary ?? this.textPrimary,
-    accent: accent ?? this.accent,
-  );
-
-  @override
-  PremiumDarkThemeGenerated lerp(
-    ThemeExtension<PremiumDarkThemeGenerated>? other,
-    double t,
-  ) {
-    if (other is! PremiumDarkThemeGenerated) return this;
-    return PremiumDarkThemeGenerated(
-      canvas: Color.lerp(canvas, other.canvas, t)!,
-      cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
-      textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
-      accent: Color.lerp(accent, other.accent, t)!,
-    );
-  }
-
-  static PremiumDarkThemeGenerated of(BuildContext context) =>
-      Theme.of(context).extension<PremiumDarkThemeGenerated>()!;
 }

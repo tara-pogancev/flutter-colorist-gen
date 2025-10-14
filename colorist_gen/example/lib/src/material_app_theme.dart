@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 final coloristMaterialAppTheme = ThemeData(
   brightness: Brightness.light,
-  colorSchemeSeed: MainLightTheme().accent,
+  colorSchemeSeed: MainLightTheme().primary,
 );
 
 final coloristMaterialAppThemeDark = ThemeData(
   brightness: Brightness.dark,
-  colorSchemeSeed: MainLightTheme().accent,
+  colorSchemeSeed: MainLightTheme().primary,
 );

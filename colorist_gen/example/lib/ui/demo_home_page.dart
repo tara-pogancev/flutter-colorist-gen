@@ -1,3 +1,4 @@
+import 'package:example/src/theme_context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class DemoHomePage extends StatelessWidget {
@@ -13,7 +14,7 @@ class DemoHomePage extends StatelessWidget {
             const Text('Hello, Colorist!'),
             Text(
               'Let\'s explore color palettes',
-              style: Theme.of(context).textTheme.labelLarge,
+              style: context.textTheme.labelLarge,
             ),
           ],
         ),
@@ -34,7 +35,7 @@ class DemoHomePage extends StatelessWidget {
           ),
           Text(
             'Traditional paint',
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: context.textTheme.headlineMedium,
           ),
           const _ArtCard(
             assetPath: 'assets/the_creation_of_adam.jpg',
@@ -57,6 +58,7 @@ class DemoHomePage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: context.colors.canvas,
         items: [
           const BottomNavigationBarItem(
             icon: Icon(Icons.star),
@@ -83,8 +85,8 @@ class _DemoCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         gradient: LinearGradient(
           colors: [
-            Theme.of(context).colorScheme.primaryContainer,
-            Theme.of(context).colorScheme.secondaryContainer,
+            context.colors.cardGradientStart,
+            context.colors.cardGradientEnd,
           ],
         ),
       ),
@@ -107,11 +109,15 @@ class _DemoCard extends StatelessWidget {
                   ),
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
+                    foregroundColor: context.colors.white,
                     side: BorderSide(
-                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      color: context.colors.white,
                       width: 1.5,
                     ),
-                    textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                    textStyle: context.textTheme.bodyLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.colors.white,
+                    ),
                   ),
                 ),
               ],
@@ -126,11 +132,11 @@ class _DemoCard extends StatelessWidget {
                     children: [
                       Text(
                         'Michelangelo Buonarroti',
-                        style: Theme.of(context).textTheme.titleLarge,
+                        style: context.textTheme.titleLarge,
                       ),
                       Text(
                         'Sculptor, painter, architect, and poet',
-                        style: Theme.of(context).textTheme.bodyMedium,
+                        style: context.textTheme.bodyMedium,
                       ),
                     ],
                   ),
@@ -155,6 +161,7 @@ class _ArtCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: context.colors.cardBackground,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -168,15 +175,15 @@ class _ArtCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: Theme.of(context).textTheme.titleMedium,
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(color: context.colors.text),
                     ),
                     Text(
                       artist,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Theme.of(context).colorScheme.primary),
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: context.colors.textSecondary),
                     ),
                     Text(
                       year.toString(),
-                      style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Theme.of(context).colorScheme.primary),
+                      style: Theme.of(context).textTheme.labelMedium!.copyWith(color: context.colors.textTernary),
                     ),
                   ],
                 ),
