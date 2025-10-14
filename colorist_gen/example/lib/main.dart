@@ -18,9 +18,10 @@ class MyApp extends StatelessWidget {
         MainDarkTheme(),
       ],
       initialTheme: MainLightTheme(),
-      child: const MaterialApp(
+      builder: (currentTheme) => MaterialApp(
         title: 'Colorist Demo',
-        home: DemoHomePage(),
+        theme: currentTheme,
+        home: const DemoHomePage(),
       ),
     );
   }

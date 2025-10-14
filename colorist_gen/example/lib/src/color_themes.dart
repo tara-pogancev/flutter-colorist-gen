@@ -37,7 +37,7 @@ class MainLightTheme extends AppColorTheme {
   Color get cardGradientStart => const Color.fromARGB(255, 55, 97, 195);
 
   @override
-  Color get primary => const Color.fromARGB(255, 80, 135, 237);
+  Color get primary => const Color.fromARGB(255, 56, 182, 24);
 
   @override
   Color get text => const Color.fromARGB(255, 16, 23, 46);
@@ -55,7 +55,7 @@ class MainLightTheme extends AppColorTheme {
 @ColorTheme(name: 'main')
 class MainDarkTheme extends AppColorTheme {
   @override
-  Brightness get brightness => Brightness.light;
+  Brightness get brightness => Brightness.dark;
 
   @override
   ThemeData get data => MaterialAppTheme.getForColorTheme(this);

@@ -5,11 +5,11 @@ class ThemeManager<T extends ColorThemeSchema> extends StatefulWidget {
   const ThemeManager(
       {super.key,
       required this.themes,
-      required this.child,
+      required this.builder,
       this.initialTheme,
       this.initialBrightness});
 
-  final Widget child;
+  final Widget Function(ThemeData curentTheme) builder;
   final List<T> themes;
   final T? initialTheme;
   final Brightness? initialBrightness;
@@ -64,7 +64,7 @@ class _ThemeManagerState<T extends ColorThemeSchema>
 
     return _InheritedThemeManager(
       controller: controller,
-      child: widget.child,
+      child: widget.builder(_currentTheme.data),
     );
   }
 }
