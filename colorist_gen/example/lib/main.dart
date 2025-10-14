@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       themes: [
         MainLightTheme(),
         MainDarkTheme(),
+        PremiumDarkTheme(),
       ],
       initialTheme: MainLightTheme(),
       builder: (currentTheme) => MaterialApp(

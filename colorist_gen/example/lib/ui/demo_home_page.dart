@@ -61,14 +61,7 @@ class DemoHomePage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: context.colors.canvas,
         onTap: (index) {
-          final controller = ThemeManager.of(context);
-          if (index == 0) {
-            controller.setTheme(MainLightTheme());
-          } else if (index == 1) {
-            controller.setTheme(MainDarkTheme());
-          } else {
-            controller.setTheme(MainDarkTheme());
-          }
+          context.themeManager.setTheme(context.themeManager.themes[index]);
         },
         items: [
           const BottomNavigationBarItem(

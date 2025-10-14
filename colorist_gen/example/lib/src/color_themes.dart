@@ -37,7 +37,7 @@ class MainLightTheme extends AppColorTheme {
   Color get cardGradientStart => const Color.fromARGB(255, 55, 97, 195);
 
   @override
-  Color get primary => const Color.fromARGB(255, 56, 182, 24);
+  Color get primary => const Color.fromARGB(255, 24, 27, 182);
 
   @override
   Color get text => const Color.fromARGB(255, 16, 23, 46);
@@ -86,4 +86,40 @@ class MainDarkTheme extends AppColorTheme {
 
   @override
   Color get white => const Color.fromARGB(255, 10, 13, 36);
+}
+
+@ColorTheme(name: 'premium')
+class PremiumDarkTheme extends AppColorTheme {
+  @override
+  Brightness get brightness => Brightness.dark;
+
+  @override
+  ThemeData get data => MaterialAppTheme.getForColorTheme(this);
+
+  @override
+  Color get canvas => const Color.fromARGB(255, 31, 7, 12);
+
+  @override
+  Color get cardBackground => const Color.fromARGB(255, 102, 19, 37);
+
+  @override
+  Color get cardGradientEnd => const Color.fromARGB(255, 216, 113, 44);
+
+  @override
+  Color get cardGradientStart => const Color.fromARGB(255, 216, 108, 45);
+
+  @override
+  Color get primary => const Color.fromARGB(255, 170, 21, 21);
+
+  @override
+  Color get text => const Color.fromARGB(255, 236, 191, 191);
+
+  @override
+  Color get textSecondary => const Color.fromARGB(255, 197, 131, 131);
+
+  @override
+  Color get textTernary => const Color.fromARGB(255, 199, 98, 111);
+
+  @override
+  Color get white => const Color.fromARGB(255, 36, 12, 10);
 }
