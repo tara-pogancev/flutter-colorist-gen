@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 part 'color_themes.g.dart';
 
 @ColorTheme()
-abstract class _AppColorTheme extends ColorThemeSchema {
-  _AppColorTheme({
+abstract class AppColorTheme extends ColorThemeSchema with _$AppColorThemeGen {
+  const factory AppColorTheme({
+    required Brightness brightness,
     required Color primary,
     required Color cardBackground,
     required Color cardGradientStart,
@@ -16,13 +17,13 @@ abstract class _AppColorTheme extends ColorThemeSchema {
     required Color textSecondary,
     required Color textTernary,
     required Color white,
-  });
+  }) = _AppColorTheme;
 
   @override
-  ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);
+  ThemeData get themeData => MaterialAppTheme.getForColorTheme(forestTheme);
 }
 
-const forestTheme = AppColorTheme(
+final forestTheme = const AppColorTheme(
   brightness: Brightness.dark,
   primary: Color(0xFF2F5D3E),
   cardBackground: Color(0xFF142315),
