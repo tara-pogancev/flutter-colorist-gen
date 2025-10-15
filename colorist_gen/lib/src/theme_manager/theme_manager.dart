@@ -64,7 +64,7 @@ class _ThemeManagerState<T extends ColorThemeSchema>
 
     return _InheritedThemeManager(
       controller: controller,
-      child: widget.builder(_currentTheme.data),
+      child: widget.builder(_currentTheme.themeData),
     );
   }
 }

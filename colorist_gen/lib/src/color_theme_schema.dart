@@ -2,6 +2,6 @@ import 'package:flutter/material.dart';
 
 abstract class ColorThemeSchema {
   Brightness get brightness;
-  ThemeData get data;
+  ThemeData get themeData;
   ThemeExtension<dynamic> toExtension();
 }

@@ -7,7 +7,7 @@ class MaterialAppTheme {
       brightness: theme.brightness,
       colorSchemeSeed: theme.primary,
       extensions: [
-        theme.toExtension(),
+        theme.(),
       ],
     );
   }
