@@ -6,6 +6,9 @@ class MaterialAppTheme {
     return ThemeData(
       brightness: theme.brightness,
       colorSchemeSeed: theme.primary,
+      extensions: [
+        theme.toExtension(),
+      ],
     );
   }
 }

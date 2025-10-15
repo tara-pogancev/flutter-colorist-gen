@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 part 'color_themes.g.dart';
 
+@ColorTheme(name: 'MainAppTheme')
 abstract class AppColorTheme extends ColorThemeSchema {
   Color get primary;
   Color get cardGradientStart;
@@ -16,7 +17,6 @@ abstract class AppColorTheme extends ColorThemeSchema {
   Color get white;
 }
 
-@ColorTheme(name: 'main')
 class MainLightTheme extends AppColorTheme {
   @override
   Brightness get brightness => Brightness.light;
@@ -50,9 +50,21 @@ class MainLightTheme extends AppColorTheme {
 
   @override
   Color get white => const Color.fromARGB(255, 240, 241, 248);
+
+  @override
+  MainAppThemeExt toExtension() => MainAppThemeExt(
+    canvas: canvas,
+    cardBackground: cardBackground,
+    cardGradientEnd: cardGradientEnd,
+    cardGradientStart: cardGradientStart,
+    primary: primary,
+    text: text,
+    textSecondary: textSecondary,
+    textTernary: textTernary,
+    white: white,
+  );
 }
 
-@ColorTheme(name: 'main')
 class MainDarkTheme extends AppColorTheme {
   @override
   Brightness get brightness => Brightness.dark;
@@ -86,6 +98,19 @@ class MainDarkTheme extends AppColorTheme {
 
   @override
   Color get white => const Color.fromARGB(255, 10, 13, 36);
+
+  @override
+  MainAppThemeExt toExtension() => MainAppThemeExt(
+    canvas: canvas,
+    cardBackground: cardBackground,
+    cardGradientEnd: cardGradientEnd,
+    cardGradientStart: cardGradientStart,
+    primary: primary,
+    text: text,
+    textSecondary: textSecondary,
+    textTernary: textTernary,
+    white: white,
+  );
 }
 
 @ColorTheme(name: 'premium')
@@ -122,4 +147,17 @@ class PremiumDarkTheme extends AppColorTheme {
 
   @override
   Color get white => const Color.fromARGB(255, 36, 12, 10);
+
+  @override
+  MainAppThemeExt toExtension() => MainAppThemeExt(
+    canvas: canvas,
+    cardBackground: cardBackground,
+    cardGradientEnd: cardGradientEnd,
+    cardGradientStart: cardGradientStart,
+    primary: primary,
+    text: text,
+    textSecondary: textSecondary,
+    textTernary: textTernary,
+    white: white,
+  );
 }

@@ -13,7 +13,7 @@ part of 'color_themes.dart';
 // Theme: main (light)
 
 @immutable
-class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
+class MainAppThemeExt extends ThemeExtension<MainAppThemeExt> {
   final Color canvas;
   final Color cardBackground;
   final Color cardGradientEnd;
@@ -24,7 +24,7 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
   final Color textTernary;
   final Color white;
 
-  const MainLightThemeGenerated({
+  const MainAppThemeExt({
     required this.canvas,
     required this.cardBackground,
     required this.cardGradientEnd,
@@ -37,7 +37,7 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
   });
 
   @override
-  MainLightThemeGenerated copyWith({
+  MainAppThemeExt copyWith({
     Color? canvas,
     Color? cardBackground,
     Color? cardGradientEnd,
@@ -47,7 +47,7 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
     Color? textSecondary,
     Color? textTernary,
     Color? white,
-  }) => MainLightThemeGenerated(
+  }) => MainAppThemeExt(
     canvas: canvas ?? this.canvas,
     cardBackground: cardBackground ?? this.cardBackground,
     cardGradientEnd: cardGradientEnd ?? this.cardGradientEnd,
@@ -60,12 +60,12 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
   );
 
   @override
-  MainLightThemeGenerated lerp(
-    ThemeExtension<MainLightThemeGenerated>? other,
+  MainAppThemeExt lerp(
+    ThemeExtension<MainAppThemeExt>? other,
     double t,
   ) {
-    if (other is! MainLightThemeGenerated) return this;
-    return MainLightThemeGenerated(
+    if (other is! MainAppThemeExt) return this;
+    return MainAppThemeExt(
       canvas: Color.lerp(canvas, other.canvas, t)!,
       cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
       cardGradientEnd: Color.lerp(cardGradientEnd, other.cardGradientEnd, t)!,
@@ -82,10 +82,10 @@ class MainLightThemeGenerated extends ThemeExtension<MainLightThemeGenerated> {
     );
   }
 
-  static MainLightThemeGenerated of(BuildContext context) =>
-      Theme.of(context).extension<MainLightThemeGenerated>()!;
+  static MainAppThemeExt of(BuildContext context) =>
+      Theme.of(context).extension<MainAppThemeExt>()!;
 }
 
 extension AppColorThemeX on BuildContext {
-  AppColorTheme get colors => this.themeManager.currentTheme as AppColorTheme;
+  MainAppThemeExt get colors => this.theme.extension<MainAppThemeExt>()!;
 }
