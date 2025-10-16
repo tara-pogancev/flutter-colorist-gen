@@ -113,15 +113,27 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
 
   @override
   AppColorThemeExtension lerp(covariant ThemeExtension<AppColorThemeExtension>? other, double t) {
-    if (other is! AppColorThemeExtension) return this;
-    return this; // no lerp support for now
+    if (other is! AppColorThemeExtension) {
+      return this;
+    }
+    return AppColorThemeExtension(
+      primary: Color.lerp(primary, other.primary, t)!,
+      cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
+      cardGradientStart: Color.lerp(cardGradientStart, other.cardGradientStart, t)!,
+      cardGradientEnd: Color.lerp(cardGradientEnd, other.cardGradientEnd, t)!,
+      canvas: Color.lerp(canvas, other.canvas, t)!,
+      text: Color.lerp(text, other.text, t)!,
+      textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
+      textTernary: Color.lerp(textTernary, other.textTernary, t)!,
+      white: Color.lerp(white, other.white, t)!,
+    );
   }
 }
 
 // **************************************************************************
-// Context accessors
+// Context extension for color access
 // **************************************************************************
 
 extension AppColorThemeX on BuildContext {
-  AppColorTheme get colors => Theme.of(this).extension<AppColorThemeExtension>() as AppColorTheme;
+  AppColorThemeExtension get colors => Theme.of(this).extension<AppColorThemeExtension>() as AppColorThemeExtension;
 }
