@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 part 'color_themes.g.dart';
 
 @ColorTheme()
-abstract class AppColorTheme extends ColorThemeSchema with _$AppColorThemeGen {
+abstract class AppColorTheme with _$AppColorTheme {
   const factory AppColorTheme({
     required Brightness brightness,
     required Color primary,
