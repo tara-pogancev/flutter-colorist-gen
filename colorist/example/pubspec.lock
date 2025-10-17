@@ -143,10 +143,10 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
-  colorist_gen_builder:
+  colorist_builder:
     dependency: "direct dev"
     description:
-      path: "../../colorist_gen_builder"
+      path: "../../colorist_builder"
       relative: true
     source: path
     version: "0.0.1"

@@ -1,4 +1,4 @@
-import 'package:colorist_gen/colorist_gen.dart';
+import 'package:colorist/colorist.dart';
 import 'package:flutter/material.dart';
 
 class ThemeManager<T extends ColorThemeSchema> extends StatefulWidget {
@@ -96,7 +96,7 @@ class _InheritedThemeManager extends InheritedWidget {
   });
 
   @override
-  bool updateShouldNotify(_InheritedThemeManager oldWidget) => true;
-  // controller.currentTheme != oldWidget.controller.currentTheme ||
-  // controller.brightness != oldWidget.controller.brightness;
+  bool updateShouldNotify(_InheritedThemeManager oldWidget) =>
+      controller.currentTheme != oldWidget.controller.currentTheme ||
+      controller.brightness != oldWidget.controller.brightness;
 }

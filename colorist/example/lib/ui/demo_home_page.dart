@@ -1,4 +1,4 @@
-import 'package:colorist_gen/colorist_gen.dart';
+import 'package:colorist_gen/colorist.dart';
 import 'package:example/src/color_themes.dart';
 import 'package:flutter/material.dart';
 

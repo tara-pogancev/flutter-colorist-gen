@@ -1,7 +1,7 @@
 targets:
   $default:
     builders:
-      colorist_gen_builder|colorist_gen:
+      colorist_builder|colorist:
         generate_for:
           - lib/**
         options:
@@ -9,7 +9,7 @@ targets:
 
 builders:
   colorist_gen:
-    import: "package:colorist_gen_builder/colorist_gen_builder.dart"
+    import: "package:colorist_builder/colorist_builder.dart"
     builder_factories: ["coloristBuilder"]
     build_extensions: { ".dart": [".g.dart"] }
     auto_apply: dependents
