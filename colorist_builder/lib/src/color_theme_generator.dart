@@ -1,6 +1,7 @@
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:colorist_annotations/colorist_annotations.dart';
+import 'package:colorist_builder/src/getter_source_extraction.dart';
 import 'package:source_gen/source_gen.dart';
 
 const _colorChecker = TypeChecker.fromUrl('dart:ui#Color');
@@ -11,7 +12,7 @@ class ColoristThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
     dynamic element,
     ConstantReader annotation,
     BuildStep buildStep,
-  ) {
+  ) async {
     if (element is! ClassElement) {
       throw InvalidGenerationSourceError(
         'ColorTheme annotationcan only be used on classes.',
@@ -33,6 +34,8 @@ class ColoristThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
         .where((p) => _colorChecker.isExactlyType(p.type))
         .map((p) => p.name)
         .toList();
+
+    final themeDataGetter = element.getGetter("themeData");
 
     final buffer = StringBuffer();
 
@@ -86,10 +89,20 @@ class ColoristThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
     buffer.writeln('  );\n');
 
     // themeData
-    buffer.writeln('  @override');
-    buffer.writeln(
-        '  ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);');
-    buffer.writeln('}\n');
+    if (themeDataGetter != null) {
+      final offset = themeDataGetter.firstFragment.offset;
+
+      String themeDataSource = themeDataGetter
+          .firstFragment.libraryFragment.source.contents.data
+          .substring(offset);
+
+      themeDataSource = extractGetterBodyFromDeclaration(themeDataSource);
+
+      buffer.writeln('  @override');
+      buffer.writeln('  ThemeData get $themeDataSource');
+    }
+
+    buffer.writeln('\n}\n');
 
     // === THEME EXTENSION ===
     buffer.writeln(
@@ -143,11 +156,10 @@ class ColoristThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
     buffer.writeln(
         '// **************************************************************************\n');
 
-    buffer.writeln('extension ${className}X on BuildContext {');
+    buffer.writeln('extension ${className}BuildContextX on BuildContext {');
     buffer.writeln('  $extName get colors =>');
     buffer.writeln('      Theme.of(this).extension<$extName>() as $extName;');
     buffer.writeln('}\n');
-    buffer.writeln('// END OF GENERATED FILE\n');
 
     return buffer.toString();
   }

@@ -22,6 +22,8 @@ abstract class AppColorTheme with _$AppColorTheme {
 
   @override
   ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);
+
+  // int get myNumber => 42;
 }
 
 final Map<String, AppColorTheme> appColorThemes = {
@@ -37,6 +39,7 @@ final Map<String, AppColorTheme> appColorThemes = {
     textTernary: Color.fromARGB(255, 78, 160, 183),
     white: Colors.white,
   ),
+
   'desert': const AppColorTheme(
     brightness: Brightness.light,
     primary: Color(0xFFFF7043),
@@ -49,6 +52,7 @@ final Map<String, AppColorTheme> appColorThemes = {
     textTernary: Color.fromARGB(255, 226, 72, 67),
     white: Colors.white,
   ),
+
   'forest': const AppColorTheme(
     brightness: Brightness.dark,
     primary: Color(0xFF2F5D3E),

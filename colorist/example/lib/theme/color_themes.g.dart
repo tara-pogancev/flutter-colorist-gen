@@ -18,7 +18,6 @@ part of 'color_themes.dart';
 @immutable
 mixin _$AppColorTheme implements ColorThemeSchema {
   // Custom theme colors
-  Color get black;
   Color get canvas;
   Color get cardBackground;
   Color get cardGradientEnd;
@@ -33,8 +32,6 @@ mixin _$AppColorTheme implements ColorThemeSchema {
 /// @nodoc
 @immutable
 class _AppColorTheme implements AppColorTheme {
-  @override
-  final Color black;
   @override
   final Color canvas;
   @override
@@ -56,7 +53,6 @@ class _AppColorTheme implements AppColorTheme {
 
   const _AppColorTheme({
     required this.brightness,
-    required this.black,
     required this.canvas,
     required this.cardBackground,
     required this.cardGradientEnd,
@@ -73,7 +69,6 @@ class _AppColorTheme implements AppColorTheme {
 
   @override
   ThemeExtension get themeExtension => AppColorThemeExtension(
-    black: black,
     canvas: canvas,
     cardBackground: cardBackground,
     cardGradientEnd: cardGradientEnd,
@@ -96,7 +91,6 @@ class _AppColorTheme implements AppColorTheme {
 @immutable
 class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
   // Custom theme colors
-  final Color black;
   final Color canvas;
   final Color cardBackground;
   final Color cardGradientEnd;
@@ -108,7 +102,6 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
   final Color white;
 
   const AppColorThemeExtension({
-    required this.black,
     required this.canvas,
     required this.cardBackground,
     required this.cardGradientEnd,
@@ -123,7 +116,6 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
   @override
   AppColorThemeExtension copyWith({AppColorTheme? data}) =>
       AppColorThemeExtension(
-        black: data?.black ?? black,
         canvas: data?.canvas ?? canvas,
         cardBackground: data?.cardBackground ?? cardBackground,
         cardGradientEnd: data?.cardGradientEnd ?? cardGradientEnd,
@@ -144,7 +136,6 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
       return this;
     }
     return AppColorThemeExtension(
-      black: Color.lerp(black, other.black, t)!,
       canvas: Color.lerp(canvas, other.canvas, t)!,
       cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
       cardGradientEnd: Color.lerp(cardGradientEnd, other.cardGradientEnd, t)!,
@@ -167,10 +158,8 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
 // Use 'context.colors' to access active colors defined in AppColorTheme
 // **************************************************************************
 
-extension AppColorThemeX on BuildContext {
+extension AppColorThemeBuildContextX on BuildContext {
   AppColorThemeExtension get colors =>
       Theme.of(this).extension<AppColorThemeExtension>()
           as AppColorThemeExtension;
 }
-
-// END OF GENERATED FILE
