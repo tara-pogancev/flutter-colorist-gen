@@ -1,5 +1,5 @@
-import 'package:colorist_gen/colorist.dart';
-import 'package:example/src/color_themes.dart';
+import 'package:colorist/colorist.dart';
+import 'package:example/theme/color_themes.dart';
 import 'package:flutter/material.dart';
 
 class DemoHomePage extends StatelessWidget {

@@ -1,6 +1,6 @@
+import 'package:colorist/colorist.dart';
 import 'package:colorist_annotations/colorist_annotations.dart';
-import 'package:colorist_gen/colorist.dart';
-import 'package:example/src/material_app_theme.dart';
+import 'package:example/theme/material_app_theme.dart';
 import 'package:flutter/material.dart';
 
 part 'color_themes.g.dart';

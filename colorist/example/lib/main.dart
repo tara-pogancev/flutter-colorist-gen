@@ -1,5 +1,5 @@
-import 'package:colorist_gen/colorist.dart';
-import 'package:example/src/color_themes.dart';
+import 'package:colorist/colorist.dart';
+import 'package:example/theme/color_themes.dart';
 import 'package:example/ui/demo_home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       // initialBrightness: Brightness.dark,
       builder: (currentTheme) {
         // Your MaterialApp widget should use the theme provided by ThemeManager
-        // Colors are made via extensions on ThemeData
+        // Colors are made eccesible via extensions on ThemeData
         return MaterialApp(
           title: 'Colorist Demo',
           theme: currentTheme,

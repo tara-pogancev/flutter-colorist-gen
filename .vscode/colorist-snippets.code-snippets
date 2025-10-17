@@ -5,7 +5,7 @@
     "description": "Generates the abstract class boilerplate for a custom color theme using @ColorTheme annotation with Colorist.",
     "body": [
       "import 'package:colorist_annotations/colorist_annotations.dart';",
-      "import 'package:colorist_gen/colorist_gen.dart';",
+      "import 'package:colorist/colorist.dart';",
       "import 'package:flutter/material.dart';",
       "",
       "part '${1:theme_name}.g.dart';",

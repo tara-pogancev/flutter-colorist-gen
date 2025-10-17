@@ -8,7 +8,7 @@ targets:
           enabled: true
 
 builders:
-  colorist_gen:
+  colorist:
     import: "package:colorist_builder/colorist_builder.dart"
     builder_factories: ["coloristBuilder"]
     build_extensions: { ".dart": [".g.dart"] }

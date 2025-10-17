@@ -1,4 +1,4 @@
-import 'package:example/src/color_themes.dart';
+import 'package:example/theme/color_themes.dart';
 import 'package:flutter/material.dart';
 
 class MaterialAppTheme {
@@ -6,9 +6,9 @@ class MaterialAppTheme {
     return ThemeData(
       brightness: theme.brightness,
       colorSchemeSeed: theme.primary,
-      extensions: [
-        theme.themeExtension,
-      ],
+      // extensions: [
+      //   theme.themeExtension,
+      // ],
     );
   }
 }

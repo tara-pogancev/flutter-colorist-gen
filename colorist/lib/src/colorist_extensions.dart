@@ -1,4 +1,4 @@
-import 'package:colorist_gen/colorist_gen.dart';
+import 'package:colorist/colorist.dart';
 import 'package:flutter/material.dart';
 
 extension ContextThemeX on BuildContext {
