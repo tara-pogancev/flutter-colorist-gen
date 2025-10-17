@@ -60,18 +60,22 @@ class DemoHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: context.colors.canvas,
+        currentIndex: context.themeManager.themes.indexOf(context.themeManager.currentTheme),
         onTap: (index) {
           context.themeManager.setTheme(context.themeManager.themes[index]);
         },
         items: [
           const BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'Main (Light)',
+            icon: Icon(Icons.water),
+            label: 'Ocean\n(Light)',
           ),
-          const BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Main (Dark)'),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.star),
-            label: 'Premium (Dark)',
+            icon: Icon(Icons.sunny),
+            label: 'Desert\n(Light)',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.nature),
+            label: 'Forest\n(Dark)',
           ),
         ],
       ),
@@ -120,7 +124,6 @@ class _DemoCard extends StatelessWidget {
                     ),
                     textStyle: context.textTheme.bodyLarge!.copyWith(
                       fontWeight: FontWeight.bold,
-                      color: context.colors.white,
                     ),
                   ),
                 ),
@@ -136,11 +139,16 @@ class _DemoCard extends StatelessWidget {
                     children: [
                       Text(
                         'Michelangelo Buonarroti',
-                        style: context.textTheme.titleLarge,
+                        style: context.textTheme.titleLarge!.copyWith(
+                          color: context.colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       Text(
                         'Sculptor, painter, architect, and poet',
-                        style: context.textTheme.bodyMedium,
+                        style: context.textTheme.bodyMedium!.copyWith(
+                          color: context.colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -179,7 +187,7 @@ class _ArtCard extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: Theme.of(context).textTheme.titleMedium!.copyWith(color: context.colors.text),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(color: context.colors.text, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       artist,
@@ -187,7 +195,7 @@ class _ArtCard extends StatelessWidget {
                     ),
                     Text(
                       year.toString(),
-                      style: Theme.of(context).textTheme.labelMedium!.copyWith(color: context.colors.textTernary),
+                      style: Theme.of(context).textTheme.labelMedium!.copyWith(color: context.colors.textTernary, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

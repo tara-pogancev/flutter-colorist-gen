@@ -63,10 +63,20 @@ class _AppColorTheme implements AppColorTheme {
   final Brightness brightness;
 
   @override
-  ThemeExtension get themeExtension => throw UnimplementedError();
+  ThemeExtension get themeExtension => AppColorThemeExtension(
+    primary: primary,
+    cardBackground: cardBackground,
+    cardGradientStart: cardGradientStart,
+    cardGradientEnd: cardGradientEnd,
+    canvas: canvas,
+    text: text,
+    textSecondary: textSecondary,
+    textTernary: textTernary,
+    white: white,
+  );
 
   @override
-  ThemeData get themeData => MaterialAppTheme.getForColorTheme(forestTheme);
+  ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);
 }
 
 // **************************************************************************

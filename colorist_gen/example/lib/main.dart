@@ -14,16 +14,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ThemeManager<AppColorTheme>(
       themes: [
-        forestTheme,
-        forestTheme,
+        oceanTheme,
+        desertTheme,
         forestTheme,
       ],
-      initialTheme: forestTheme,
-      builder: (currentTheme) => MaterialApp(
-        title: 'Colorist Demo',
-        theme: currentTheme,
-        home: const DemoHomePage(),
-      ),
+      initialTheme: oceanTheme,
+      builder: (currentTheme) {
+        return MaterialApp(
+          title: 'Colorist Demo',
+          theme: currentTheme,
+          home: const DemoHomePage(),
+        );
+      },
     );
   }
 }
