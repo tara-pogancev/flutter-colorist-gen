@@ -1,0 +1,13 @@
+name: colorist_annotations
+description: "A new Flutter package project."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  meta: ^1.7.0
+
+dev_dependencies:
+  flutter_lints: ^5.0.0

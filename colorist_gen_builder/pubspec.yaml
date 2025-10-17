@@ -10,14 +10,12 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   build: ^4.0.2
   source_gen: ^4.0.1
   analyzer: ^8.2.0
 
-  colorist_gen:
-    path: ../colorist_gen
+  colorist_annotations:
+    path: ../colorist_annotations
 
 dev_dependencies:
   flutter_lints: any

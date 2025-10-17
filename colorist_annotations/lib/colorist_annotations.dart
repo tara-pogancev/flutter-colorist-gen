@@ -1,4 +1,4 @@
-import 'package:meta/meta.dart'; // Provides @immutable
+import 'package:meta/meta.dart';
 
 /// Use on concrete classes that implement a schema. `name` groups palettes
 /// (e.g. 'main', 'amber');

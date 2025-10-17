@@ -1,0 +1,7 @@
+{
+  "Colorist Theme Schema": {
+    "prefix": ["colorist-theme"],
+    "body": [""],
+    "description": "Base class for defining your app's custoom color schema."
+  }
+}

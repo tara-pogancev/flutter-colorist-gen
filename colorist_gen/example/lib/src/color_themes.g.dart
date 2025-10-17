@@ -1,9 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// **************************************************************************
-// Colorist Theme Generator
-// **************************************************************************
+// dart format width=80
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
 
 part of 'color_themes.dart';
+
+// **************************************************************************
+// ColoristThemeGenerator
+// **************************************************************************
 
 // **************************************************************************
 // AppColorTheme implementation
@@ -13,11 +18,11 @@ part of 'color_themes.dart';
 @immutable
 mixin _$AppColorTheme implements ColorThemeSchema {
   // Custom theme colors
-  Color get primary;
-  Color get cardBackground;
-  Color get cardGradientStart;
-  Color get cardGradientEnd;
   Color get canvas;
+  Color get cardBackground;
+  Color get cardGradientEnd;
+  Color get cardGradientStart;
+  Color get primary;
   Color get text;
   Color get textSecondary;
   Color get textTernary;
@@ -28,15 +33,15 @@ mixin _$AppColorTheme implements ColorThemeSchema {
 @immutable
 class _AppColorTheme implements AppColorTheme {
   @override
-  final Color primary;
+  final Color canvas;
   @override
   final Color cardBackground;
   @override
-  final Color cardGradientStart;
-  @override
   final Color cardGradientEnd;
   @override
-  final Color canvas;
+  final Color cardGradientStart;
+  @override
+  final Color primary;
   @override
   final Color text;
   @override
@@ -48,11 +53,11 @@ class _AppColorTheme implements AppColorTheme {
 
   const _AppColorTheme({
     required this.brightness,
-    required this.primary,
-    required this.cardBackground,
-    required this.cardGradientStart,
-    required this.cardGradientEnd,
     required this.canvas,
+    required this.cardBackground,
+    required this.cardGradientEnd,
+    required this.cardGradientStart,
+    required this.primary,
     required this.text,
     required this.textSecondary,
     required this.textTernary,
@@ -64,11 +69,11 @@ class _AppColorTheme implements AppColorTheme {
 
   @override
   ThemeExtension get themeExtension => AppColorThemeExtension(
-    primary: primary,
-    cardBackground: cardBackground,
-    cardGradientStart: cardGradientStart,
-    cardGradientEnd: cardGradientEnd,
     canvas: canvas,
+    cardBackground: cardBackground,
+    cardGradientEnd: cardGradientEnd,
+    cardGradientStart: cardGradientStart,
+    primary: primary,
     text: text,
     textSecondary: textSecondary,
     textTernary: textTernary,
@@ -86,22 +91,22 @@ class _AppColorTheme implements AppColorTheme {
 @immutable
 class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
   // Custom theme colors
-  final Color primary;
-  final Color cardBackground;
-  final Color cardGradientStart;
-  final Color cardGradientEnd;
   final Color canvas;
+  final Color cardBackground;
+  final Color cardGradientEnd;
+  final Color cardGradientStart;
+  final Color primary;
   final Color text;
   final Color textSecondary;
   final Color textTernary;
   final Color white;
 
   const AppColorThemeExtension({
-    required this.primary,
-    required this.cardBackground,
-    required this.cardGradientStart,
-    required this.cardGradientEnd,
     required this.canvas,
+    required this.cardBackground,
+    required this.cardGradientEnd,
+    required this.cardGradientStart,
+    required this.primary,
     required this.text,
     required this.textSecondary,
     required this.textTernary,
@@ -109,29 +114,37 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
   });
 
   @override
-  AppColorThemeExtension copyWith({AppColorTheme? data}) => AppColorThemeExtension(
-    primary: data?.primary ?? primary,
-    cardBackground: data?.cardBackground ?? cardBackground,
-    cardGradientStart: data?.cardGradientStart ?? cardGradientStart,
-    cardGradientEnd: data?.cardGradientEnd ?? cardGradientEnd,
-    canvas: data?.canvas ?? canvas,
-    text: data?.text ?? text,
-    textSecondary: data?.textSecondary ?? textSecondary,
-    textTernary: data?.textTernary ?? textTernary,
-    white: data?.white ?? white,
-  );
+  AppColorThemeExtension copyWith({AppColorTheme? data}) =>
+      AppColorThemeExtension(
+        canvas: data?.canvas ?? canvas,
+        cardBackground: data?.cardBackground ?? cardBackground,
+        cardGradientEnd: data?.cardGradientEnd ?? cardGradientEnd,
+        cardGradientStart: data?.cardGradientStart ?? cardGradientStart,
+        primary: data?.primary ?? primary,
+        text: data?.text ?? text,
+        textSecondary: data?.textSecondary ?? textSecondary,
+        textTernary: data?.textTernary ?? textTernary,
+        white: data?.white ?? white,
+      );
 
   @override
-  AppColorThemeExtension lerp(covariant ThemeExtension<AppColorThemeExtension>? other, double t) {
+  AppColorThemeExtension lerp(
+    covariant ThemeExtension<AppColorThemeExtension>? other,
+    double t,
+  ) {
     if (other is! AppColorThemeExtension) {
       return this;
     }
     return AppColorThemeExtension(
-      primary: Color.lerp(primary, other.primary, t)!,
-      cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
-      cardGradientStart: Color.lerp(cardGradientStart, other.cardGradientStart, t)!,
-      cardGradientEnd: Color.lerp(cardGradientEnd, other.cardGradientEnd, t)!,
       canvas: Color.lerp(canvas, other.canvas, t)!,
+      cardBackground: Color.lerp(cardBackground, other.cardBackground, t)!,
+      cardGradientEnd: Color.lerp(cardGradientEnd, other.cardGradientEnd, t)!,
+      cardGradientStart: Color.lerp(
+        cardGradientStart,
+        other.cardGradientStart,
+        t,
+      )!,
+      primary: Color.lerp(primary, other.primary, t)!,
       text: Color.lerp(text, other.text, t)!,
       textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
       textTernary: Color.lerp(textTernary, other.textTernary, t)!,
@@ -142,8 +155,13 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
 
 // **************************************************************************
 // Context extension for color access
+// Use 'context.colors' to access active colors defined in AppColorTheme
 // **************************************************************************
 
 extension AppColorThemeX on BuildContext {
-  AppColorThemeExtension get colors => Theme.of(this).extension<AppColorThemeExtension>() as AppColorThemeExtension;
+  AppColorThemeExtension get colors =>
+      Theme.of(this).extension<AppColorThemeExtension>()
+          as AppColorThemeExtension;
 }
+
+// END OF GENERATED FILE

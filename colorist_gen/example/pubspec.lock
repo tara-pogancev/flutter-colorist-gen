@@ -129,6 +129,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.1"
+  colorist_annotations:
+    dependency: "direct main"
+    description:
+      path: "../../colorist_annotations"
+      relative: true
+    source: path
+    version: "0.0.1"
   colorist_gen:
     dependency: "direct main"
     description:

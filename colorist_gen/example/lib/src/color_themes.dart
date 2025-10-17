@@ -1,3 +1,4 @@
+import 'package:colorist_annotations/colorist_annotations.dart';
 import 'package:colorist_gen/colorist_gen.dart';
 import 'package:example/src/material_app_theme.dart';
 import 'package:flutter/material.dart';
