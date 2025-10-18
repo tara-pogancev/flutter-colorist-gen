@@ -1,15 +1,18 @@
 import 'package:colorist/colorist.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ThemeManager<T extends ColorThemeSchema> extends StatefulWidget {
   const ThemeManager(
       {super.key,
       required this.themes,
-      required this.builder,
+      this.builder,
+      this.cupertinoBuilder,
       this.initialTheme,
       this.initialBrightness});
 
-  final Widget Function(ThemeData curentTheme) builder;
+  final Widget Function(ThemeData curentTheme)? builder;
+  final Widget Function(CupertinoThemeData curentTheme)? cupertinoBuilder;
   final List<T> themes;
   final T? initialTheme;
   final Brightness? initialBrightness;
@@ -33,6 +36,21 @@ class _ThemeManagerState<T extends ColorThemeSchema>
   @override
   void initState() {
     super.initState();
+
+    if (widget.themes.isEmpty) {
+      throw Exception('ThemeManager requires at least one theme');
+    }
+
+    if (widget.cupertinoBuilder != null && widget.builder != null) {
+      throw Exception(
+          'ThemeManager cannot have both builder and cupertinoBuilder defined. Please define either a builder (for MaterialApp) or a cupertinoBuilder (for CupertinoApp).');
+    }
+
+    if (widget.cupertinoBuilder == null && widget.builder == null) {
+      throw Exception(
+          'ThemeManager requires either a builder (for MaterialApp) or a cupertinoBuilder (for CupertinoApp).');
+    }
+
     _currentTheme = widget.initialTheme ?? widget.themes.first;
     _brightness = widget.initialBrightness ?? Brightness.light;
   }
@@ -64,7 +82,9 @@ class _ThemeManagerState<T extends ColorThemeSchema>
 
     return _InheritedThemeManager(
       controller: controller,
-      child: widget.builder(_currentTheme.themeData),
+      child: (widget.builder != null)
+          ? widget.builder!(_currentTheme.themeData!)
+          : widget.cupertinoBuilder!(_currentTheme.cupertinoThemeData!),
     );
   }
 }

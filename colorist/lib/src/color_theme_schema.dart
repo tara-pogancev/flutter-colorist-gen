@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// Schema for color themes
@@ -12,6 +13,7 @@ import 'package:flutter/material.dart';
 /// is used for easily mapping colors
 abstract class ColorThemeSchema {
   Brightness get brightness;
-  ThemeData get themeData;
+  ThemeData? get themeData;
   ThemeExtension<dynamic> get themeExtension;
+  CupertinoThemeData? get cupertinoThemeData;
 }

@@ -1,5 +1,5 @@
 import 'package:colorist/colorist.dart';
-import 'package:colorist_annotations/colorist_annotations.dart';
+import 'package:example/theme/cupertino_app_theme.dart';
 import 'package:example/theme/material_app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +23,8 @@ abstract class AppColorTheme with _$AppColorTheme {
   @override
   ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);
 
-  // int get myNumber => 42;
+  @override
+  CupertinoThemeData? get cupertinoThemeData => CupertinoAppTheme.getForColorTheme(this);
 }
 
 final Map<String, AppColorTheme> appColorThemes = {

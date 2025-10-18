@@ -14,8 +14,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   colorist:
     path: ../
-  colorist_annotations:
-    path: ../../colorist_annotations
 
 dev_dependencies:
   flutter_test:

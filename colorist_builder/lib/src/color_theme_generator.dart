@@ -35,8 +35,6 @@ class ColoristThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
         .map((p) => p.name)
         .toList();
 
-    final themeDataGetter = element.getGetter("themeData");
-
     final buffer = StringBuffer();
 
     // === FILE HEADER ===
@@ -88,18 +86,19 @@ class ColoristThemeGenerator extends GeneratorForAnnotation<ColorTheme> {
     }
     buffer.writeln('  );\n');
 
-    // themeData
-    if (themeDataGetter != null) {
-      final offset = themeDataGetter.firstFragment.offset;
+    // getters
+    for (var getter in element.getters) {
+      final offset = getter.firstFragment.offset;
+      final getterType = getter.returnType.getDisplayString();
 
-      String themeDataSource = themeDataGetter
+      String getterSource = getter
           .firstFragment.libraryFragment.source.contents.data
           .substring(offset);
 
-      themeDataSource = extractGetterBodyFromDeclaration(themeDataSource);
+      getterSource = extractGetterBodyFromDeclaration(getterSource);
 
-      buffer.writeln('  @override');
-      buffer.writeln('  ThemeData get $themeDataSource');
+      buffer.writeln('  $getterType get $getterSource');
+      buffer.writeln('\n');
     }
 
     buffer.writeln('\n}\n');

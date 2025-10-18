@@ -6,9 +6,8 @@
     "body": [
       "import 'package:colorist_annotations/colorist_annotations.dart';",
       "import 'package:colorist/colorist.dart';",
-      "import 'package:flutter/material.dart';",
       "",
-      "part '${1:theme_name}.g.dart';",
+      "part '${TM_FILENAME}.g.dart';",
       "",
       "@ColorTheme()",
       "abstract class ${2:AppColorTheme} with _\\$${2:AppColorTheme} {",
@@ -19,8 +18,12 @@
       "  }) = _${2:AppColorTheme};",
       "",
       "  @override",
-      "  // TODO: implement themeData getter",
-      "  ThemeData get themeData => throw UnimplementedError();",
+      "  // TODO: implement themeData getter for MaterialApp support",
+      "  ThemeData? get themeData => null;",
+      "",
+      "  @override",
+      "  // TODO: implement cupertinoThemeData getter for CupertinoApp support",
+      "  CupertinoThemeData get cupertinoThemeData => null;",
       "}"
     ]
   }
