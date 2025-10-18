@@ -80,7 +80,7 @@ class _AppColorTheme implements AppColorTheme {
     white: white,
   );
 
-  ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);
+  ThemeData? get themeData => MaterialAppTheme.getForColorTheme(this);
 
   CupertinoThemeData? get cupertinoThemeData =>
       CupertinoAppTheme.getForColorTheme(this);
@@ -161,9 +161,7 @@ class AppColorThemeExtension extends ThemeExtension<AppColorThemeExtension> {
 // **************************************************************************
 
 extension AppColorThemeBuildContextX on BuildContext {
-  // AppColorThemeExtension get colors =>
-  //     Theme.of(this).extension<AppColorThemeExtension>()
-  //         as AppColorThemeExtension;
-  AppColorTheme get colors =>
-      ThemeManager.of(this).currentTheme as AppColorTheme;
+  AppColorThemeExtension get colors =>
+      Theme.of(this).extension<AppColorThemeExtension>()
+          as AppColorThemeExtension;
 }

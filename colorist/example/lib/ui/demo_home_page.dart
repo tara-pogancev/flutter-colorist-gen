@@ -15,7 +15,7 @@ class DemoHomePage extends StatelessWidget {
             const Text('Hello, Colorist!'),
             Text(
               'Let\'s explore color palettes',
-              style: context.textTheme.labelLarge,
+              style: context.textTheme.labelLarge!.copyWith(color: context.colors.textSecondary),
             ),
           ],
         ),
@@ -52,7 +52,7 @@ class DemoHomePage extends StatelessWidget {
           ),
           const _ArtCard(
             assetPath: 'assets/girl_with_a_pearl_earring.jpg',
-            artist: '	Johannes Vermeer',
+            artist: 'Johannes Vermeer',
             title: 'Girl with a Pearl Earring',
             year: 1665,
           ),

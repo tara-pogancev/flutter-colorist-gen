@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   /// Change this flag to switch between MaterialApp and CupertinoApp example
-  final bool isMaterialApp = false;
+  final bool isMaterialApp = true;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             // initialBrightness: Brightness.dark,
             builder: (currentTheme) {
               /// Your [MaterialApp] widget should use the [ThemeData] `currentTheme` provided by [ThemeManager]'s builder
-              /// Colors are made eccesible via extensions on ThemeData -> `context.colors`
+              /// Colors are made eccesible via extensions on BuildContext -> `context.colors`
               return MaterialApp(
                 title: 'Colorist Demo',
                 theme: currentTheme,

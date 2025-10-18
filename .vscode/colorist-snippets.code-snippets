@@ -23,7 +23,7 @@
       "",
       "  @override",
       "  // TODO: implement cupertinoThemeData getter for CupertinoApp support",
-      "  CupertinoThemeData get cupertinoThemeData => null;",
+      "  CupertinoThemeData? get cupertinoThemeData => null;",
       "}"
     ]
   }

@@ -21,7 +21,7 @@ abstract class AppColorTheme with _$AppColorTheme {
   }) = _AppColorTheme;
 
   @override
-  ThemeData get themeData => MaterialAppTheme.getForColorTheme(this);
+  ThemeData? get themeData => MaterialAppTheme.getForColorTheme(this);
 
   @override
   CupertinoThemeData? get cupertinoThemeData => CupertinoAppTheme.getForColorTheme(this);
